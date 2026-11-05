@@ -84,7 +84,7 @@
                         TIN HỌC CƯỜNG TÍN
                         <span class="text-xs bg-red-100 text-red-700 font-semibold px-2 py-0.5 rounded-full border border-red-200">2026 Price</span>
                     </h1>
-                    <p class="text-xs text-slate-500 font-medium">Báo giá theo gói & Xuất Catalogue in ấn tiêu chuẩn</p>
+                    <p class="hidden sm:block text-xs text-slate-500 font-medium">Báo giá theo gói & Xuất Catalogue in ấn tiêu chuẩn</p>
                 </div>
             </div>
 
@@ -96,13 +96,14 @@
                     <span class="hidden md:inline">Google Sheet API</span>
                 </button>
 
-                <!-- Nút Đăng nhập / Đăng xuất Admin -->
-                <button onclick="handleAdminAuthToggle()" id="adminAuthBtn" class="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-lg transition" title="Quản trị viên">
+                <!-- Nút Đăng nhập / Đăng xuất Admin (Ẩn trên điện thoại, hiện từ màn hình sm) -->
+                <button onclick="handleAdminAuthToggle()" id="adminAuthBtn" class="hidden sm:flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-lg transition" title="Quản trị viên">
                     <i class="fa-solid fa-user-shield text-slate-600" id="adminAuthIcon"></i>
                     <span id="adminAuthText" class="hidden sm:inline">Đăng nhập</span>
                 </button>
 
-                <button onclick="refreshDataFromGas()" id="syncBtn" class="flex items-center justify-center w-8 h-8 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition" title="Làm mới dữ liệu từ Sheet">
+                <!-- Nút reload (Ẩn trên điện thoại, hiện từ màn hình sm) -->
+                <button onclick="refreshDataFromGas()" id="syncBtn" class="hidden sm:flex items-center justify-center w-8 h-8 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition" title="Làm mới dữ liệu từ Sheet">
                     <i class="fa-solid fa-arrows-rotate text-slate-600" id="syncIcon"></i>
                 </button>
                 <button onclick="openCustomHotlineModal()" class="hidden md:flex items-center gap-2 px-3.5 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
@@ -1213,12 +1214,12 @@
                             <!-- Price preview & Package Select Button -->
                             <div class="space-y-1.5 sm:space-y-2 pt-2 border-t border-slate-100">
                                 <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5">
-                                    <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium">Từ (Cloud):</span>
-                                    <span class="text-sm sm:text-base font-black text-brand-600">${formatVND(cam.packages.cloud.price)}</span>
+                                    <span class="text-[10px] sm:text-[11px] text-slate-500 font-medium">BH 2 năm (Thẻ 64GB):</span>
+                                    <span class="text-sm sm:text-base font-black text-brand-600">${formatVND(cam.packages.bh_2y_sd.price)}</span>
                                 </div>
                                 <div class="text-[10px] sm:text-[11px] text-slate-600 bg-slate-50 p-1 sm:p-1.5 rounded-lg border border-slate-200/80 flex items-center justify-between">
-                                    <span class="text-[9px] sm:text-[10px]">Thẻ 64GB:</span>
-                                    <span class="font-bold text-slate-800">${formatVND(cam.packages.setup_sd.price)}</span>
+                                    <span class="text-[9px] sm:text-[10px]">Gói Cloud:</span>
+                                    <span class="font-bold text-slate-800">${formatVND(cam.packages.cloud.price)}</span>
                                 </div>
 
                                 <div class="grid grid-cols-2 gap-1 sm:gap-1.5 pt-0.5">
